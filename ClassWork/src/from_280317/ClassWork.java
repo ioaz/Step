@@ -31,7 +31,7 @@ public class ClassWork {
 
             }
             if (chararray.length > counter)
-                System.out.print("еще разок ");
+                System.out.print("еще разок  ");
 
 
 
