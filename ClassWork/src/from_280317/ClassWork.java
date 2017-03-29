@@ -1,12 +1,44 @@
 package from_280317;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * Created by ioa on 28.03.17.
  */
 public class ClassWork {
     public static void main(String[] args) throws IOException {
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int r = 1;
+        while (r>0) {
+            System.out.println("ввидите слово:\n ");
+            String s = reader.readLine();
+            char[] chararray = s.toCharArray();
+            //System.out.println(Arrays.toString(chararray));
+            int counter = 0;
+            for (int i = 0; i < s.length(); i++) {
+                if (chararray[i] == chararray[chararray.length - i - 1]) {
+                    counter++;
+                    //System.out.println(chararray[i] + chararray[chararray.length-i-1]);
+                    //System.out.println(counter);
+                }
+                if (chararray.length == counter) {
+                    System.out.println("\"" + s + "\" - " + "это полиндром!\n");
+                }
+
+
+            }
+            if (chararray.length > counter)
+                System.out.print("еще разок ");
+
+
+
+
+
+        }
+
         /*int i = 1;
         int sum = 0;
         int n = 10;
