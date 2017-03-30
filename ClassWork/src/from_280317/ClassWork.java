@@ -26,7 +26,7 @@ public class ClassWork {
                     //System.out.println(counter);
                 }
                 if (chararray.length == counter) {
-                    System.out.println("\"" + s + "\" - " + "это полиндром!\n");
+                    System.out.println("\"" + s + "\" - " + "это полином!\n");
                 }
 
 
