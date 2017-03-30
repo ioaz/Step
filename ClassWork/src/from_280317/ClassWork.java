@@ -9,8 +9,9 @@ import java.io.InputStreamReader;
  */
 public class ClassWork {
     public static void main(String[] args) throws IOException {
-
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.println("Полином.");
         int r = 1;
         while (r>0) {
             System.out.println("ввидите слово:\n ");
@@ -19,7 +20,7 @@ public class ClassWork {
             //System.out.println(Arrays.toString(chararray));
             int counter = 0;
             for (int i = 0; i < s.length(); i++) {
-                if (chararray[i] == chararray[chararray.length - i - 1]) {
+                if (chararray[i] == chararray[chararray.length-i-1]) {
                     counter++;
                     //System.out.println(chararray[i] + chararray[chararray.length-i-1]);
                     //System.out.println(counter);
