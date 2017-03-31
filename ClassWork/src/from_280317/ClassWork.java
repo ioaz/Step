@@ -17,9 +17,9 @@ public class ClassWork {
             System.out.println("ввидите слово:\n ");
             String s = reader.readLine();
             char[] chararray = s.toCharArray();
-            //System.out.println(Arrays.toString(chararray));
             int counter = 0;
             for (int i = 0; i < s.length(); i++) {
+                //System.out.print("[" + chararray[i] + "]" + " ");
                 if (chararray[i] == chararray[chararray.length-i-1]) {
                     counter++;
                     //System.out.println(chararray[i] + chararray[chararray.length-i-1]);
@@ -28,16 +28,7 @@ public class ClassWork {
                 if (chararray.length == counter) {
                     System.out.println("\"" + s + "\" - " + "это полином!\n");
                 }
-
-
             }
-            if (chararray.length > counter)
-                System.out.print("еще разок ");
-
-
-
-
-
         }
 
         /*int i = 1;
