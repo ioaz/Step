@@ -1,25 +1,28 @@
 package from_300317;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 /**
  * Created by ioa on 30.03.17.
  */
 public class Slau {
     public static void main(String[] args) throws IOException {
-
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        //BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         //int n = Integer.parseInt(reader.readLine());
         //float[][] matrix = new float[n][n];
         //Random random = new Random();
-            float[][] matrix = {{1,2,3},
-                                {4,5,6},
-                                {7,8,9}};
+        /*float[][] matrix = {{1,2,3},
+                              {4,5,6},
+                              {7,8,9}};
+        */
+        float[][] matrix = new float[3][3];
+
+        int f=1;
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++) {
-            //    matrix[i][j] = random.nextInt(10);
+            //  matrix[i][j] = random.nextInt(10);
+                matrix[i][j] = f;
+                f++;
                 System.out.print(matrix[i][j] + " ");
             }
             System.out.println();
@@ -57,30 +60,39 @@ public class Slau {
                 //System.out.println("m = " + m);
                 for(int i = 0; i < matrix.length; i++){ // этот проходит по строке и
                     matrix[j][i] = matrix[j][i] - m * matrix[k-1][i]; // отнимает строку от строки умноженную на делитель
-                                                                      // и записывает результаты в матрицу
+                                                                      // и заносит результаты в матрицу
                  //   System.out.print(matrix[j][i] + " ");
                 }
                // System.out.println();
             }
-        }
 
+        }
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++) {
                 System.out.print(matrix[i][j] + " ");
             }
             System.out.println();
         }
-        System.out.println();
 
+        System.out.println();
         /*float v = (int) (matrix[1][matrix.length-2] / matrix[1][1]);
         System.out.println("i !="+v);
         v -= matrix[1][matrix.length-1] *
                 2/matrix[1][1];
         System.out.println(v);*/
 
-        /*
         float[] x = new float[3];
+        float x1;
+        float x2;
+        float x3;
+        x1 = matrix[1][2] / matrix[2][2];
+        System.out.println(x1);
+        x1 = matrix[0][2] / matrix[1][1];
+        System.out.println(x1);
+        x1 = matrix[0][2] / matrix[0][0];
+        System.out.println(x1);
 
+/*
         for (int i = matrix.length-1; i >= 0; i--) {
             x[i] = matrix[i][matrix.length-1] / matrix[i][i];
         //    System.out.print("x " + x[i] + " ");
