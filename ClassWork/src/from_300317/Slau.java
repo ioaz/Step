@@ -11,22 +11,21 @@ public class Slau {
         //int n = Integer.parseInt(reader.readLine());
         //float[][] matrix = new float[n][n];
         //Random random = new Random();
-        /*float[][] matrix = {{1,2,3},
+        float[][] matrix =   {{9,2,3},
                               {4,5,6},
                               {7,8,9}};
-        */
-        float[][] matrix = new float[3][3];
+        /*float[][] matrix = new float[3][3];
 
-        int f=1;
+        int f = 1;
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++) {
-            //  matrix[i][j] = random.nextInt(10);
+                //  matrix[i][j] = random.nextInt(10);
                 matrix[i][j] = f;
                 f++;
                 System.out.print(matrix[i][j] + " ");
             }
             System.out.println();
-        }
+        }*/
         float m;
         /*
         int j0 = matrix[1][0] / matrix[0][0]; // 4 / 1 = 4
@@ -56,14 +55,14 @@ public class Slau {
         // Приведение расширенной матрицы к ступенчатому виду (прямой ход)
         for (int k = 1; k < matrix.length; k++) { //этот цикл определяет строку (начинается со второй)
             for (int j = k; j < matrix.length; j++) { // этот определяет первый элемент в строке
-                m = (matrix[j][k-1] / matrix[k-1][k-1]); // вычисляется делитель
+                m = (matrix[j][k - 1] / matrix[k - 1][k - 1]); // вычисляется делитель
                 //System.out.println("m = " + m);
-                for(int i = 0; i < matrix.length; i++){ // этот проходит по строке и
-                    matrix[j][i] = matrix[j][i] - m * matrix[k-1][i]; // отнимает строку от строки умноженную на делитель
-                                                                      // и заносит результаты в матрицу
-                 //   System.out.print(matrix[j][i] + " ");
+                for (int i = 0; i < matrix.length; i++) { // этот проходит по строке и
+                    matrix[j][i] = matrix[j][i] - m * matrix[k - 1][i]; // отнимает строку от строки умноженную на делитель
+                    // и заносит результаты в матрицу
+                    //   System.out.print(matrix[j][i] + " ");
                 }
-               // System.out.println();
+                // System.out.println();
             }
 
         }
@@ -73,13 +72,12 @@ public class Slau {
             }
             System.out.println();
         }
-
         System.out.println();
         /*float v = (int) (matrix[1][matrix.length-2] / matrix[1][1]);
         System.out.println("i !="+v);
         v -= matrix[1][matrix.length-1] *
                 2/matrix[1][1];
-        System.out.println(v);*/
+        System.out.println(v);
 
         float[] x = new float[3];
         float x1;
@@ -91,19 +89,20 @@ public class Slau {
         System.out.println(x1);
         x1 = matrix[0][2] / matrix[0][0];
         System.out.println(x1);
+*/
+        float[] x = new float[matrix.length];
 
-/*
-        for (int i = matrix.length-1; i >= 0; i--) {
+        for (int i = matrix.length - 1; i >= 0; i--) {
             x[i] = matrix[i][matrix.length-1] / matrix[i][i];
-        //    System.out.print("x " + x[i] + " ");
-            if (i != matrix.length-1) {
-                x[i] -= matrix[i][1] *
-                        x[1]/matrix[i][i];
+            //System.out.print("x " + x[i] + " ");
+            if (i != matrix.length - 1) {
+                x[i] -= matrix[i][i + 1] * x[i + 1] / matrix[i][i];
                 //System.out.println("x2 "+x[i]);
             }
         }
-        for (int i = 0; i < x.length; i++){
-            System.out.println(x[i]);
-        }*/
+        for (int i = 0; i < x.length; i++) {
+            System.out.println("x" + (i + 1) + ": " + x[i]);
+
+        }
     }
 }
